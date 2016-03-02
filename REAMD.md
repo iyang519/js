@@ -1,18 +1,18 @@
 js启示录
 
-1.js构造函数构建并返回对象实例
-*new+构造函数，该函数this值设置为正在构建的新对象，该函数默认返回this
+## js构造函数构建并返回对象实例
+* new+构造函数，该函数this值设置为正在构建的新对象，该函数默认返回this
 
-2.js原生对象构造函数(9个)
-Number()
-String()
-Boolean()
-Object()
-Array()
-Function()
-Date()
-RegExp()
-Error()
+## js原生对象构造函数(9个)
+* Number()
+* String()
+* Boolean()
+* Object()
+* Array()
+* Function()
+* Date()
+* RegExp()
+* Error()
 
 注意：Math对象是一个静态对象，不是构造函数，不能var x = new Math()。Math只是一个由js设置的对象命名空间，用于存储数学函数
 
