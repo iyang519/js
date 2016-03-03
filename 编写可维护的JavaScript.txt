@@ -1,0 +1,109 @@
+## 编写可维护的JavaScript
+> 建议认真阅读第七章事件处理，第十章抛出自定义错误，以及第三部分自动化
+1.代码缩进层级-4个空格字符
+2.语句结尾-不要省略分号
+3.一行长度限定在80个字符，多行字符可以用拼接符 + 来将字符串分成多份
+4.在运算符换行后，第二行追加二个缩进，运算符（类似 , && + 等）应该作为前一行的行尾。
+5.命名采用驼峰法大小写命名。不建议使用匈牙利命名法
+6.变量命名前缀应该是名词，方法是动词前缀。例如count,length,size表示数据类型，getName就是函数命名
+7.常量是大写字母加下划线
+8.单行注释和多行注释之前应该有一个空行，且缩进。添加注释的原则是让代码更清晰。此外还有文档注释
+
+// 单行注释
+
+/*
+ *
+ * 多行注释
+ */
+
+/**
+文档注释
+@method
+@param
+@return 
+**/
+
+9.if for while do...while... try...catch... 所有块语句都应该使用花括号
+10.流行的写法是将所有变量声明放在函数顶部，而不是散落在各个角落
+var value = 10,
+    i,
+    len;
+11.先声明函数然后在使用函数，且函数声明不应该出现在语句块之内
+
+12.最好不要在全局作用域使用"use strict"
+(function(){
+	"use strict";
+})()
+
+13.推荐使用===和!==，不推荐使用==和!=
+
+14.减少使用eval()和Function()，且减少给setTimeout() setInterval()传入字符串参数
+
+
+15.UI层解耦，将JavaScript，css，html相互抽离。
+将javascript从css抽离典型例子，避免使用css表达式
+将css从JavaScript抽离典型例子，用className成为js和css通信桥梁
+将JavaScript从html抽离典型例子，避免将脚本嵌入到html中运行
+将html从JavaScript抽离典型例子，模板引擎
+
+16.避免使用全局变量
+*单全局变量方式，将所有功能代码都挂载在全局对象上，例如jquery定义了二个全局对象$和jQuery。
+*命名空间是简单的通过全局对象的单一属性表示功能的分组。
+*异步模块定义AMD
+*零全局变量，如果你的脚本较短，也不需要交互，可以考虑使用零全局变量方式来实现
+> (function(win){
+	
+}(window))
+
+17.避免变量与null的比较。如果检测null则直接使用恒等运算符 === 或非恒等运算符 !==
+
+
+18.typeof运算符将用于一个未声明的变量也不会报错，未定义的变量和值为undefined的变量通过typeof都返回undefined。
+
+
+19.在检测自定义类型时，最好做法是使用instanceof运算符。
+> function Person(name){
+	
+}
+var me = new Person('renyang');
+console.log(me instanceof Person);
+
+20.检测函数最好的方法是使用typeof。
+> function myFunc(){}
+console.log(typeof myFunc === "function");//true
+
+21.检测数组方法
+function isArray(value){
+	return object.prototype.toString.call(value) === "[object Array]";
+}
+
+22.检测属性是否存在
+不好写法
+* if(object[propertyName]){} 
+* if(object[propertyName] != null){}
+* if(object[propertyName] != undefined){}
+判断属性是否存在的最好方法是使用in运算符，in运算符仅仅简单的判断属性是否存在，而不会读属性的值
+只是想检测实例对象的某个属性是否存在，则使用hasOwnProperty()方法。
+好的写法：
+if(object.hasOwnProperty('related')){}
+
+23.将配置数据从代码中分离出来
+
+24.不是你的对象不要动
+
+25.delete操作符只能对实例的属性和方法起作用，如果在prototype属性和方法使用delete是不起作用的，但是仍可以用对其赋值为null的方法来阻止被调用。
+
+26.throw new Error('something bad happened!');
+抛出包含任何你需要的有助于调试问题的信息。针对所有浏览器，唯一不出差的显示自定义错误消息的方式就是用一个Error对象。
+
+
+27.何时抛出错误，由于js没有类型或参数检查，要充分进行类型检查。
+
+28.try{}catch(ex){} 当try模块发生了一个错误时，程序立即停止执行，然后跳到catch块，并传入一个错误的对象。
+
+
+
+
+
+
+
