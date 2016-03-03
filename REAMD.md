@@ -47,13 +47,13 @@
 
 
 10.删除对象的属性
-> var foo = { bar : "bar"};delete foo.bar;
+<pre><code> var foo = { bar : "bar"};delete foo.bar;</code></pre>
 delete不会删除在原型链上找到的属性，delete是将属性从一个对象中删除的唯一办法，将属性设置为undefined或null只是改变了属性的值，而不是将属性从对象中删除
 
 11.使用hasOwnProperty验证对象属性不是来自原型链的。使用in操作符检查一个对象是否包含给定属性，不仅可以检查包含在引用对象中的属性，而且能够检查对象通过原型链继承的所有属性。
 
 12.使用for in循环枚举对象属性
-var cody = {
+<pre><code>var cody = {
 	age : 23,
 	gender : 'male'
 }
@@ -61,7 +61,7 @@ for (var key in cody){
 	if(cody.hasOwnProperty(key)){
 		console.log(key);
 	}
-}
+}</code></pre>
 
 
 13.Object()属性和方法
@@ -78,16 +78,16 @@ for (var key in cody){
 15.Function对象实例属性和方法
 * arguments 是一个类数组对象，包含所有传递给函数的参数
 arguments.callee属性，它是对当前执行函数的引用，在函数需要递归调用，它非常有用
-var foo = function foo(){
+<pre><code>var foo = function foo(){
 	console.log(arguments.callee);//输出foo()
-}
+}</code></pre>
 *constructor
 
 length 实际上可以获取函数所需要参数总数量
->  var myFunction = function(z,s,d,e,r,m,q){
+<pre><code>var myFunction = function(z,s,d,e,r,m,q){
 	return myFunction.length;
 }
-console.log(myFunction());//7
+console.log(myFunction());//7</code></pre>
 
 * apply()、call() 
 apply和call的区别在于参数传递不同，前者是传递传递多个参数组成的数组，后者多个分开的参数
@@ -98,7 +98,7 @@ apply和call的区别在于参数传递不同，前者是传递传递多个参�
 
 17.传递给所有函数的this关键字都是对包含函数对象的引用。作为属性包含在对象内的函数，可以用this来获得对‘父’对象的引用（使用new关键字或apply(）call()除外)在new中this值引用实例本身，原型方法内的this关键字引用构造函数实例。当函数在全局作用域定义时，this值为全局对象。
 *注意：当this值得宿主函数被封装在另一个函数的内部或在另一个函数的上下文被调用时，this将永远对head对象的引用，简单的在父函数中使用作用域链来保留对this的引用，以便this值不丢失。
-var myObject = {
+<pre><code>var myObject = {
 	func1 : function(){
 		console.log(this);//myObject
 		var that = this;
@@ -107,15 +107,15 @@ var myObject = {
 			console.log(that);//myObject
 		}
     }
-}
+}</code></pre>
 
 18.函数提升，在运行代码之前，函数语句已经被编译器解释，并添加到执行堆栈/上下文，在使用函数语句要确保自己明白这一点
-> var speak = function(){
+<pre><code> var speak = function(){
 	sayYo();//输出yo
 	funtion sayYo(){
 		console.log('yo');
     }
-}
+}</code></pre>
 
 19.head对象是js环境中可用的最高作用域/上下文，在web浏览器中有以下方法
 * decodeURI()
@@ -141,11 +141,11 @@ var myObject = {
 * 方法：pop(),push(),reverse(),shift(),unshift(),sort(),splice(),concat(),join(),slice()
 
 25.遍历数组最简单的方法就是while循环
-var myArray = [];
+<pre><code>var myArray = [];
 var myArrayLength = myArray.length;
 while(myArrayLength--){
 	...;
-};
+};</code></pre>
 不用for循环是因为while循环参数很少，更容易阅读
 
 26.使用null显示指出对象属性不包含值，typeof(null)===object。验证null值总是使用===，使用==无法区分undefined和null；
@@ -203,9 +203,9 @@ var value = 10,
 11.先声明函数然后在使用函数，且函数声明不应该出现在语句块之内
 
 12.最好不要在全局作用域使用"use strict"
-(function(){
+<pre><code>(function(){
 	"use strict";
-})()
+})()</code></pre>
 
 13.推荐使用===和!==，不推荐使用==和!=
 
@@ -223,9 +223,9 @@ var value = 10,
 *命名空间是简单的通过全局对象的单一属性表示功能的分组。
 *异步模块定义AMD
 *零全局变量，如果你的脚本较短，也不需要交互，可以考虑使用零全局变量方式来实现
-> (function(win){
+<pre><code>(function(win){
 	
-}(window))
+}(window))</code></pre>
 
 17.避免变量与null的比较。如果检测null则直接使用恒等运算符 === 或非恒等运算符 !==
 
@@ -234,20 +234,17 @@ var value = 10,
 
 
 19.在检测自定义类型时，最好做法是使用instanceof运算符。
-> function Person(name){
-	
-}
+<pre><code>function Person(name){}
 var me = new Person('renyang');
-console.log(me instanceof Person);
+console.log(me instanceof Person);</code></pre>
 
 20.检测函数最好的方法是使用typeof。
-> function myFunc(){}
-console.log(typeof myFunc === "function");//true
+> function myFunc(){} console.log(typeof myFunc === "function");//true
 
 21.检测数组方法
-function isArray(value){
+<pre><code>function isArray(value){
 	return object.prototype.toString.call(value) === "[object Array]";
-}
+}</code></pre>
 
 22.检测属性是否存在
 不好写法
