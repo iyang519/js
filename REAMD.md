@@ -1,5 +1,5 @@
 # js书籍阅读
-## js启示录知识点总结
+### js启示录知识点总结
 
 > 建议仔细阅读第一章和第八章，以及回顾内容
 
@@ -160,7 +160,7 @@ while(myArrayLength--){
 30.将构造函数创建的实例链接至构造函数的prototype属性
 
 
-## 编写可维护的JavaScript
+### 编写可维护的JavaScript
 > 建议认真阅读第七章事件处理，第十章抛出自定义错误，以及第三部分自动化
 
 1.代码缩进层级-4个空格字符
@@ -239,7 +239,7 @@ var me = new Person('renyang');
 console.log(me instanceof Person);</code></pre>
 
 20.检测函数最好的方法是使用typeof。
-> function myFunc(){} console.log(typeof myFunc === "function");//true
+<pre><code>function myFunc(){} console.log(typeof myFunc === "function");//true</code></pre>
 
 21.检测数组方法
 <pre><code>function isArray(value){
