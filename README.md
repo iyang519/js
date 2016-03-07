@@ -53,18 +53,18 @@ delete不会删除在原型链上找到的属性，delete是将属性从一个�
 11.使用hasOwnProperty验证对象属性不是来自原型链的。使用in操作符检查一个对象是否包含给定属性，不仅可以检查包含在引用对象中的属性，而且能够检查对象通过原型链继承的所有属性。
 
 12.使用for in循环枚举对象属性
-<pre><code>var cody = {
-	age : 23,
-	gender : 'male'
-}
-for (var key in cody){
-	if(cody.hasOwnProperty(key)){
-		console.log(key);
-	}
-}</code></pre>
+		<pre><code>var cody = {
+			age : 23,
+			gender : 'male'
+		}
+		for (var key in cody){
+			if(cody.hasOwnProperty(key)){
+				console.log(key);
+			}
+		}</code></pre>
 
 
-13.Object()属性和方法：
+13.Object()属性和方法
 * constructor
 * hasOwnProperty()
 * isPrototypeOf()
@@ -72,22 +72,22 @@ for (var key in cody){
 * toString()
 * valueOf()
 
+
 14.使用对象字面量创建Object()。对象，没有必要将属性指定为字符串，除非属性名是以下几种情况：保留关键字，包含空格或特殊字符，以数字开始
 
 
 15.Function对象实例属性和方法
-* arguments 是一个类数组对象，包含所有传递给函数的参数
-arguments.callee属性，它是对当前执行函数的引用，在函数需要递归调用，它非常有用
-<pre><code>var foo = function foo(){
-	console.log(arguments.callee);//输出foo()
-}</code></pre>
+* arguments 是一个类数组对象，包含所有传递给函数的参数。arguments.callee属性，它是对当前执行函数的引用，在函数需要递归调用，它非常有用
+		<pre><code>var foo = function foo(){
+			console.log(arguments.callee);//输出foo()
+		}</code></pre>
 * constructor
 
-length 实际上可以获取函数所需要参数总数量
-<pre><code>var myFunction = function(z,s,d,e,r,m,q){
-	return myFunction.length;
-}
-console.log(myFunction());//7</code></pre>
+* length 实际上可以获取函数所需要参数总数量
+	<pre><code>var myFunction = function(z,s,d,e,r,m,q){
+		return myFunction.length;
+	}
+	console.log(myFunction());//7</code></pre>
 
 * apply()、call() 
 apply和call的区别在于参数传递不同，前者是传递传递多个参数组成的数组，后者多个分开的参数
