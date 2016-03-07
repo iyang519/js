@@ -223,9 +223,9 @@ var value = 10,
 *命名空间是简单的通过全局对象的单一属性表示功能的分组。
 *异步模块定义AMD
 *零全局变量，如果你的脚本较短，也不需要交互，可以考虑使用零全局变量方式来实现
-		<pre><code>(function(win){
-			
-		}(window))</code></pre>
+		<pre><code>(function(win){	
+		}(window))
+		</code></pre>
 
 17.避免变量与null的比较。如果检测null则直接使用恒等运算符 === 或非恒等运算符 !==
 
