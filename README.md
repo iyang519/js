@@ -275,9 +275,7 @@ if(object.hasOwnProperty('related')){}
 * 增加关键字的密度，关键字的词频
 * 关键字分布：
 页面头部的包括标题和描述标签，关键字优先出现在标题和描述内容的前面
-		<pre>
-			<code><title>SEO优化</title><meta content = "" name = "description"> <meta content = "" name = "keywords"></code>
-		</pre>
+<title>SEO优化</title><meta content = "" name = "description"> <meta content = "" name = "keywords">
 网页正文：网页最顶部，底部即接近<body>和</body>标签等重要位置
 * 关键字的寻找和选择
 
@@ -303,9 +301,7 @@ if(object.hasOwnProperty('related')){}
 * 谷歌会以描述标签内容作为摘要信息描述，百度倾向从正面正文截取相关信息作为描述
 * title标签长度应该控制在28个中文字符，56个英文字符。
   关键字一个提前，并且对主关键词进行描述
-		<pre>
-			<code><title>游戏 - 打造全国最好休闲小游戏网站</title></code>
-		</pre>
+  "<title>游戏 - 打造全国最好休闲小游戏网站</title>"
 * description标签长度应该控制在112个中文字符，关键字先出现，并对关键字进行描述
 
 * keywords标签，按照关键字重要性列出几个与页面主题相关的关键字即可，不宜太多
@@ -323,9 +319,9 @@ if(object.hasOwnProperty('related')){}
 
 * 提交链接与页面的相关性
 图片链接 
-		<pre><code><a href="http://www.seochat.org"><img src="http://www.seochat.org" alt="搜索引擎优化"></a></code></pre>
+		"<a href="http://www.seochat.org"><img src="http://www.seochat.org" alt="搜索引擎优化"></a>"
 文本链接
-		<pre><code> <a href="http://www.seochat.org"><b>搜索引擎优化</b></a></code></pre>
+    "<a href="http://www.seochat.org"><b>搜索引擎优化</b></a>"
 
 * 内部链接指网站内部页面之间的链接关系，反映了网站内部之间的信任关系，搜索引擎对每个页面的内部链接数量有一定限制，谷歌要求在100以内。
 
