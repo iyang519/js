@@ -98,24 +98,24 @@ apply和call的区别在于参数传递不同，前者是传递传递多个参�
 
 17.传递给所有函数的this关键字都是对包含函数对象的引用。作为属性包含在对象内的函数，可以用this来获得对‘父’对象的引用（使用new关键字或apply(）call()除外)在new中this值引用实例本身，原型方法内的this关键字引用构造函数实例。当函数在全局作用域定义时，this值为全局对象。
 *注意：当this值得宿主函数被封装在另一个函数的内部或在另一个函数的上下文被调用时，this将永远对head对象的引用，简单的在父函数中使用作用域链来保留对this的引用，以便this值不丢失。
-<pre><code>var myObject = {
-	func1 : function(){
-		console.log(this);//myObject
-		var that = this;
-		var func2 = function(){
-			console.log(this);//head对象
-			console.log(that);//myObject
-		}
-    }
-}</code></pre>
+		<pre><code>var myObject = {
+			func1 : function(){
+				console.log(this);//myObject
+				var that = this;
+				var func2 = function(){
+					console.log(this);//head对象
+					console.log(that);//myObject
+				}
+		    }
+		}</code></pre>
 
 18.函数提升，在运行代码之前，函数语句已经被编译器解释，并添加到执行堆栈/上下文，在使用函数语句要确保自己明白这一点
-<pre><code> var speak = function(){
-	sayYo();//输出yo
-	funtion sayYo(){
-		console.log('yo');
-    }
-}</code></pre>
+		<pre><code> var speak = function(){
+			sayYo();//输出yo
+			funtion sayYo(){
+				console.log('yo');
+		    }
+		}</code></pre>
 
 19.head对象是js环境中可用的最高作用域/上下文，在web浏览器中有以下方法
 * decodeURI()
@@ -141,11 +141,11 @@ apply和call的区别在于参数传递不同，前者是传递传递多个参�
 * 方法：pop(),push(),reverse(),shift(),unshift(),sort(),splice(),concat(),join(),slice()
 
 25.遍历数组最简单的方法就是while循环
-<pre><code>var myArray = [];
-var myArrayLength = myArray.length;
-while(myArrayLength--){
-	...;
-};</code></pre>
+	<pre><code>var myArray = [];
+	var myArrayLength = myArray.length;
+	while(myArrayLength--){
+		...;
+	};</code></pre>
 不用for循环是因为while循环参数很少，更容易阅读
 
 26.使用null显示指出对象属性不包含值，typeof(null)===object。验证null值总是使用===，使用==无法区分undefined和null；
@@ -203,9 +203,9 @@ var value = 10,
 11.先声明函数然后在使用函数，且函数声明不应该出现在语句块之内
 
 12.最好不要在全局作用域使用"use strict"
-<pre><code>(function(){
-	"use strict";
-})()</code></pre>
+		<pre><code>(function(){
+			"use strict";
+		})()</code></pre>
 
 13.推荐使用===和!==，不推荐使用==和!=
 
@@ -223,9 +223,9 @@ var value = 10,
 *命名空间是简单的通过全局对象的单一属性表示功能的分组。
 *异步模块定义AMD
 *零全局变量，如果你的脚本较短，也不需要交互，可以考虑使用零全局变量方式来实现
-<pre><code>(function(win){
-	
-}(window))</code></pre>
+		<pre><code>(function(win){
+			
+		}(window))</code></pre>
 
 17.避免变量与null的比较。如果检测null则直接使用恒等运算符 === 或非恒等运算符 !==
 
@@ -234,17 +234,17 @@ var value = 10,
 
 
 19.在检测自定义类型时，最好做法是使用instanceof运算符。
-<pre><code>function Person(name){}
-var me = new Person('renyang');
-console.log(me instanceof Person);</code></pre>
+		<pre><code>function Person(name){}
+		var me = new Person('renyang');
+		console.log(me instanceof Person);</code></pre>
 
 20.检测函数最好的方法是使用typeof。
-<pre><code>function myFunc(){} console.log(typeof myFunc === "function");//true</code></pre>
+		<pre><code>function myFunc(){} console.log(typeof myFunc === "function");//true</code></pre>
 
 21.检测数组方法
-<pre><code>function isArray(value){
-	return object.prototype.toString.call(value) === "[object Array]";
-}</code></pre>
+		<pre><code>function isArray(value){
+			return object.prototype.toString.call(value) === "[object Array]";
+		}</code></pre>
 
 22.检测属性是否存在
 不好写法
@@ -275,9 +275,9 @@ if(object.hasOwnProperty('related')){}
 * 增加关键字的密度，关键字的词频
 * 关键字分布：
 页面头部的包括标题和描述标签，关键字优先出现在标题和描述内容的前面
-<pre>
-	<code><title>SEO优化</title><meta content = "" name = "description"> <meta content = "" name = "keywords"></code>
-</pre>
+		<pre>
+			<code><title>SEO优化</title><meta content = "" name = "description"> <meta content = "" name = "keywords"></code>
+		</pre>
 网页正文：网页最顶部，底部即接近<body>和</body>标签等重要位置
 * 关键字的寻找和选择
 
@@ -303,9 +303,9 @@ if(object.hasOwnProperty('related')){}
 * 谷歌会以描述标签内容作为摘要信息描述，百度倾向从正面正文截取相关信息作为描述
 * title标签长度应该控制在28个中文字符，56个英文字符。
   关键字一个提前，并且对主关键词进行描述
-<pre>
-	<code><title>游戏 - 打造全国最好休闲小游戏网站</title></code>
-</pre>
+		<pre>
+			<code><title>游戏 - 打造全国最好休闲小游戏网站</title></code>
+		</pre>
 * description标签长度应该控制在112个中文字符，关键字先出现，并对关键字进行描述
 
 * keywords标签，按照关键字重要性列出几个与页面主题相关的关键字即可，不宜太多
@@ -322,8 +322,10 @@ if(object.hasOwnProperty('related')){}
 * 链接所在的页面是源页面，链接指向的页面是目标页面。链接分为文本链接，图片链接，及多媒体链接。内部链接是网站内部页面之间的链接，外部链接是与外部网站的页面的链接
 
 * 提交链接与页面的相关性
-图片链接 <a href="http://www.seochat.org"><img src="http://www.seochat.org" alt="搜索引擎优化"></a>
-文本链接 <a href="http://www.seochat.org"><b>搜索引擎优化</b></a>
+图片链接 
+		<pre><code><a href="http://www.seochat.org"><img src="http://www.seochat.org" alt="搜索引擎优化"></a></code></pre>
+文本链接
+		<pre><code> <a href="http://www.seochat.org"><b>搜索引擎优化</b></a></code></pre>
 
 * 内部链接指网站内部页面之间的链接关系，反映了网站内部之间的信任关系，搜索引擎对每个页面的内部链接数量有一定限制，谷歌要求在100以内。
 
