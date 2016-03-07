@@ -64,7 +64,7 @@ for (var key in cody){
 }</code></pre>
 
 
-13.Object()属性和方法
+13.Object()属性和方法：
 * constructor
 * hasOwnProperty()
 * isPrototypeOf()
@@ -81,7 +81,7 @@ arguments.callee属性，它是对当前执行函数的引用，在函数需要�
 <pre><code>var foo = function foo(){
 	console.log(arguments.callee);//输出foo()
 }</code></pre>
-*constructor
+* constructor
 
 length 实际上可以获取函数所需要参数总数量
 <pre><code>var myFunction = function(z,s,d,e,r,m,q){
