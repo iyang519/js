@@ -270,7 +270,7 @@ if(object.hasOwnProperty('related')){}
 
 28.try{}catch(ex){} 当try模块发生了一个错误时，程序立即停止执行，然后跳到catch块，并传入一个错误的对象。
 
-### SEO教程
+### SEO教程浅读
 1.关键字
 * 增加关键字的密度，关键字的词频
 * 关键字分布：
@@ -326,6 +326,86 @@ if(object.hasOwnProperty('related')){}
 * 内部链接指网站内部页面之间的链接关系，反映了网站内部之间的信任关系，搜索引擎对每个页面的内部链接数量有一定限制，谷歌要求在100以内。
 
 * 页面中如果存在太多的外部链接，不但会减少对外部目标链接继承的权重，也会给内部页面带来很大的负面影响，被搜索引擎认为是垃圾链接。外部链接建议控制在40以内。
+
+### http权威指南浅读
+1.媒体类型 MIME type 例如：
+* text/html
+* text/plain
+* image/jpeg
+* image/gif
+
+2.报文
+* 请求报文
+* 响应报文
+报文组成：起始行，首部，可选的主体
+
+
+3.http协议位于tcp上层，tcp位于ip层上层
+
+4.DNS将域名转为ip，url中没有指定端口号，端口号为80
+
+5.URI是一类更通用的资源标识符，URL是它的一个子集。URL不仅支持http协议同时也支持mailto，ftp等
+
+6.URL组件
+* 方案 使用哪种协议
+* 用户 访问资源需要用户名
+* 密码 用户名之后可能需要密码，用:分隔
+* 主机
+* 端口
+* 路径
+* 参数 用;分隔
+* 查询 用?分隔，多参数用&连接
+* 片段 用#分隔
+
+============
+7.URL字符集
+转义
+
+
+8.常用http方法
+* GET 从服务器上获取一份文档
+* HEAD 只从服务器上获取文档的首部
+* POST 向服务器发送需要处理的数据，包含主体
+* PUT 将请求的主体部分存储在服务器上，包含主体
+* TRACE 对可能经过代理服务器传送到服务器上去的报文进行跟踪
+* OPTIONS 决定可以在服务器上执行哪些方法
+* DELETE 从服务器上删除一份文档
+
+注意：GET和HEAD方法的HTTP请求不会产生什么动作，被认为是安全的。
+PUT有些发布系统允许用户创建web页面，并用PUT直接安装到web服务器上，在响应报文locatio:filePath。
+TRACE主要用于诊断，验证请求是否如愿穿过请求/响应链
+OPTIONS请求web服务器告知其支持各种功能，在响应报文Allow:method。
+
+
+
+9.状态码
+200 Ok
+204 No Content （没有响应主体部分）
+
+300 Multiple Choices
+304 Not Modified（资源未修改可使用缓存）
+305 Use Proxy
+
+400 Bad Request (错误请求)
+401 Unauthorized（未授权，要输入用户名和密码）
+403 Forbidden（请求被拒绝）
+404 Not Found
+405 Method Not Allowed (不支持请求方法)
+408 Request Timeout (请求时间过长)
+
+500 Internal Server Error
+505 Http Version Not Supported 
+
+10.TCP流是分段的，由IP分组传送的
+HTTP传送报文时，会以流的形式将报文数据内容通过一条打开的TCP链接按序传输。
+
+
+
+
+
+
+
+
 
 
 
